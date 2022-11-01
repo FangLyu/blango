@@ -53,6 +53,7 @@ class Dev(Configuration):
         "django.contrib.sites",
         'django.contrib.staticfiles',
         'blango_auth',
+        'rest_framework.authtoken',
         'blog',
         'crispy_forms',
         'crispy_bootstrap5',
@@ -162,6 +163,14 @@ class Dev(Configuration):
     DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
     AUTH_USER_MODEL = 'blango_auth.User'
+
+    REST_FRAMEWORK = {
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ]
+    }
 
     LOGGING = {
         "version": 1,
