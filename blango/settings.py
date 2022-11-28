@@ -66,7 +66,11 @@ class Dev(Configuration):
         'rest_framework',
         'drf_yasg',
         'django_filters',
+        'versatileimagefield',
     ]
+
+    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
 
     SWAGGER_SETTINGS = {
         "SECURITY_DEFINITIONS": {
